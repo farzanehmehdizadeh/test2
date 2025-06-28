@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive-grid</title>
+    <style>
+        .show{
+            width: 350px;
+            height: 300px ;
+            border: 2px solid black;
+            margin: 0 auto;
+
+
+            display: none;
+        }
+        .header{
+            text-align: center;
+            margin-block: 50px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-block:50px;
+            
+
+        }
+        .box{
+            border-top: 3px solid;
+            width: 350px;
+            height: 300px;
+            box-shadow:  4px 4px 10px 5px rgba(0, 0, 0, 0.2);
+            margin-inline-start: 30px ;
+            margin-block: 40px;
+            transition: all .3s ease; /* انتقال ملایم */
+            overflow: visible;
+            
+           
+
+        }
+        .box-1{
+           
+            border-top: 4px solid hsl(180, 62%, 55%);
+            background-color:hsl(180, 62%, 55%) ;
+        }
+        .box-2{
+            border-top: 4px solid hsl(34, 97%, 64%);
+            background-color:hsl(34, 97%, 64%) ;
+        }
+        .box-3{
+            border-top: 4px solid hsl(0, 78%, 62%);
+            background-color: hsl(0, 78%, 62%) ;
+        }
+        .box-4{
+            border-top: 4px solid hsl(212, 86%, 64%);
+            background-color:hsl(212, 86%, 64%) ;
+        }
+        .box:hover{
+         transform: rotateZ(7deg);
+
+
+        }
+        .explain{
+            padding-inline: 10px;
+            
+        }
+        .title{
+            padding-inline: 10px;
+        }
+        .btn{
+            width: 60px;
+            height: 30px;
+            margin-inline: 10px;
+            border-radius: 5px;
+            background-color:hsl(180, 62%, 55%)  ;
+        }
+        #btn-1{
+            width: 60px;
+            height: 30px;
+            margin-inline: 10px;
+            border-radius: 5px;
+            background-color:hsl(180, 62%, 55%)  ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p class="ty">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, vel.</p>
+    </div>
+
+    <div class="container" >
+        <div class="box box-1" >
+            <div class="title"><h1>nmasmenbe</h1></div>
+            <div class="explain"> <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui dolor nemo saepe voluptas.</p></div>
+            <button class="btn" >see </button>
+            <button style="display: none;" id="btn-1" >delete</button>
+        </div>
+        <div class="box box-1" >
+            <div class="title"><h1>nmasmenbe</h1></div>
+            <div class="explain"> <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui dolor nemo saepe voluptas.</p></div>
+            <button class="btn" >seeee</button>
+            <button style="display: none;" id="btn-1" >delete</button>
+        </div>
+        
+
+    </div>
+
+</body>
+<script>
+     const btns = document.querySelectorAll(".btn");
+     btns.forEach(btn =>{
+        btn.addEventListener('click', myfunc)
+     })
+
+    function myfunc(element){
+    const box = element.target.closest('.box')
+    if(  box.closest('.box'))
+    {
+        box.style.position = 'absolute';
+        box.style.transform = "translate(-50% , -50%) scale(1.5)"
+        box.style.top = '50%';
+        box.style.left = '50%';
+        box.style.width = '350px';
+        box.style.height = '300px';
+    }
+
+}
+
+     
+
+
+
+
+
+
+    //  قبلی که بدون دکمه درست کار میکرد
+// document.addEventListener('click', showfunc);
+// function showfunc(element){
+//     if(element.target.classList.contains('box'))
+//     {
+//         element.target.style.position = 'absolute';
+//         element.target.style.transform = "translate(-50% , -50%) scale(1.5)"
+//         element.target.style.top = '50%';
+//         element.target.style.left = '50%';
+//         element.target.style.width = '350px';
+//         element.target.style.height = '300px';
+//     }
+// }
+
+
+// نا  کار امد
+//     function show(){
+// document.querySelector('.box').style.position = 'absolute';
+// document.querySelector('.box').style.top = '50%';
+// document.querySelector('.box').style.left = '50%';
+// document.querySelector('.box').style.transform = 'translate(-50%, -50%)';
+// // document.querySelector('.box').style.transform = 'scaleX(80px)'
+// document.querySelector('.box').style.width = "600px";
+// document.querySelector('.box').style.height = "500px";
+// document.getElementById('hidebtn').style.display = 'block';
+
+// }
+// function show() {
+//   document.querySelectorAll('.box').forEach(box => {
+//     box.style.position = 'absolute';
+//     box.style.top = '50%';
+//     box.style.left = '50%';
+//     box.style.transform = 'translate(-50%, -50%)';
+//     box.style.width = "350px";
+//     box.style.height = "300px";
+//   });
+//   document.getElementById('hidebtn').style.display = 'block';
+// }
+
+// function close(button) {
+//     const box = button.closest('.box')
+//     box.style.transform = '';
+//     box.style.position = '';
+//     box.style.top = '';
+//     box.style.left = '';
+//     box.style.width = '';
+//     box.style.height = '';
+//   ;
+
+// }
+// function show(button) {
+//   const box = button.closest('.box');
+//   box.style.position = 'absolute';
+//   box.style.top = '50%'; 
+//   box.style.left = '50%';
+//   box.style.transform = 'translate(-60%, -50%) scale(1.5)';
+//   box.style.width = "350px";
+//   box.style.height = "300px";
+//  document.getElementById('hidebtn').style.display = 'block';
+//  }
+ 
+</script>
+</html>

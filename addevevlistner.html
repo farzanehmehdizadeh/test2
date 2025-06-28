@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:300px ;
+            height: 100px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button class="mybtn"> ggggg </button>
+    <button class="mybtn"> bbbb </button>
+    <button class="mybtn"> aaaa </button>
+    <div class="box"></div>
+        <button  class="btn">kk</button>
+        <button  class="btn ox">hh</button>
+
+
+</body>
+<script>
+    // document.addEventListener('click' , myfunc);
+    // document.querySelectorAll('mybtn').addEventListener('click' , myfunc);
+
+    // const btns = document.querySelectorAll('.mybtn');
+    // btns.forEach(btn => {
+    //     btn.addEventListener('click', myfunc)});
+    // function myfunc(){
+    //     this.style.backgroundColor = "red";
+
+    //     }
+    // function myfunc(event){
+    //     if(event.target.classList.contains('mybtn'))
+    //     {
+    //         event.target.style.color = "red";
+
+    //     }
+    // }
+// 
+//یک روش دیگر
+// const btn = document.querySelectorAll('.btn');
+// btn.addEventListener('click', func2);
+// btn.forEach(bt => {
+//     bt.addEventListener('click', func2);
+    
+// });
+
+// function func2(){
+//  document.querySelector('.box').style.backgroundColor = "red"}
+
+// یکروش دیگر
+const btn1 = document.querySelector('.btn');
+const btn2 = document.querySelector('.ox');
+btn1.addEventListener('click', func1);
+btn2.addEventListener('click', func2);
+function func1(){
+ document.querySelector('.box').style.backgroundColor = "red"
+}
+function func2(){
+ document.querySelector('.box').style.backgroundColor = "blue"}
+
+    
+
+
+
+
+
+</script>
+</html>
